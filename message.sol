@@ -25,12 +25,12 @@ contract MessageApp {
         receiveCount[to]++;
     }
     
-    function Sent(uint _messageId) view returns(string) {
+    function Sent(uint _messageId) external view returns(string) {
         require(msg.sender == messageSender[_messageId]);
         return messageContent[_messageId];
     }
     
-    function Inbox(uint _messageId) view returns(string) {
+    function Inbox(uint _messageId) external view returns(string) {
         require(msg.sender == messageReceiver[_messageId]);
         return messageContent[_messageId];
     }
