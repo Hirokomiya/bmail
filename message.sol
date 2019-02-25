@@ -35,12 +35,11 @@ contract MessageApp {
         return messageContent[_messageId];
     }
     
-    function Index_inbox(address _owner) external view returns(uint[]) {
-    require(msg.sender == _owner);
-    uint[] memory result = new uint[](messageCount[_owner]);
+    function Index_inbox() external view returns(uint[]) {
+    uint[] memory result = new uint[](messageCount[msg.sender]);
     uint counter = 0;
     for (uint i = 0; i < messages.length; i++) {
-      if (messageSender[i] == _owner) {
+      if (messageSender[i] == msg.sender) {
         result[counter] = i;
         counter++;
       }
@@ -48,12 +47,11 @@ contract MessageApp {
     return result;
   }
   
-    function Index_sent(address _owner) external view returns(uint[]) {
-    require(msg.sender == _owner);
-    uint[] memory result = new uint[](receiveCount[_owner]);
+    function Index_sent() external view returns(uint[]) {
+    uint[] memory result = new uint[](receiveCount[msg.sender]);
     uint counter = 0;
     for (uint i = 0; i < messages.length; i++) {
-      if (messageReceiver[i] == _owner) {
+      if (messageReceiver[i] == msg.sender) {
         result[counter] = i;
         counter++;
       }
