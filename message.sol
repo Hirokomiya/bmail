@@ -5,32 +5,60 @@ contract MessageApp {
     struct Message {
         string inbox;
         address receiver;
+        address sender;
     }
     
     Message[] messages;
 
-    mapping (uint => address) public messageSender;
+    mapping (uint => address) messageSender;
     mapping (address => uint) messageCount;
-    mapping (uint => string) MessageContent;
+    mapping (uint => string) messageContent;
     mapping (uint => address) messageReceiver;
+    mapping (address => uint) receiveCount;
     
-    function write(string _string, address _to) public {
-        uint id = messages.push(Message(_string, _to))- 1;
+    function ethmail(string message, address to) public {
+        uint id = messages.push(Message(message, to, msg.sender))- 1;
         messageSender[id] = msg.sender;
         messageCount[msg.sender]++;
-        MessageContent[id] = _string;
-        messageReceiver[id] = _to;
+        messageContent[id] = message;
+        messageReceiver[id] = to;
+        receiveCount[to]++;
     }
     
-    function checkSent(uint _messageId) view returns(string) {
+    function Sent(uint _messageId) view returns(string) {
         require(msg.sender == messageSender[_messageId]);
-        return MessageContent[_messageId];
+        return messageContent[_messageId];
     }
     
-    function checkInbox(uint _messageId) view returns(string) {
+    function Inbox(uint _messageId) view returns(string) {
         require(msg.sender == messageReceiver[_messageId]);
-        return MessageContent[_messageId];
+        return messageContent[_messageId];
     }
     
+    function Index_inbox(address _owner) external view returns(uint[]) {
+    require(msg.sender == _owner);
+    uint[] memory result = new uint[](messageCount[_owner]);
+    uint counter = 0;
+    for (uint i = 0; i < messages.length; i++) {
+      if (messageSender[i] == _owner) {
+        result[counter] = i;
+        counter++;
+      }
+    }
+    return result;
+  }
+  
+    function Index_sent(address _owner) external view returns(uint[]) {
+    require(msg.sender == _owner);
+    uint[] memory result = new uint[](receiveCount[_owner]);
+    uint counter = 0;
+    for (uint i = 0; i < messages.length; i++) {
+      if (messageReceiver[i] == _owner) {
+        result[counter] = i;
+        counter++;
+      }
+    }
+    return result;
+  }
 
 }
