@@ -16,7 +16,7 @@ contract MessageApp {
     mapping (uint => address) messageReceiver;
     mapping (address => uint) receiveCount;
     
-    function ethmail(string message, address to) public {
+    function bmail(string message, address to) public {
         uint id = messages.push(Message(message, to, msg.sender))- 1;
         messageSender[id] = msg.sender;
         messageCount[msg.sender]++;
