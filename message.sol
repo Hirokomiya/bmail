@@ -35,7 +35,7 @@ contract MessageApp {
         return messageContent[_messageId];
     }
     
-    function Index_inbox() external view returns(uint[]) {
+    function Index_sent() external view returns(uint[]) {
     uint[] memory result = new uint[](messageCount[msg.sender]);
     uint counter = 0;
     for (uint i = 0; i < messages.length; i++) {
@@ -47,7 +47,7 @@ contract MessageApp {
     return result;
   }
   
-    function Index_sent() external view returns(uint[]) {
+    function Index_inbox() external view returns(uint[]) {
     uint[] memory result = new uint[](receiveCount[msg.sender]);
     uint counter = 0;
     for (uint i = 0; i < messages.length; i++) {
