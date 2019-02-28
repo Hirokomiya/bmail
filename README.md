@@ -2,7 +2,7 @@
 How to use
 
 copy and paste the code on remix, make sure connected to metamask mainnet
-deploy the contract (click "At Address")at 0xb81b5592b5dfcc9374813ebf9fd34e9ce0a75afc
+and click "At Address" with this contract address 0xb81b5592b5dfcc9374813ebf9fd34e9ce0a75afc
 
 "click bmail" insert eth address in "to" box and message in "message" box to send
 
