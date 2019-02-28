@@ -12,5 +12,3 @@ Send me a message to
 Thank you!
 
 Hiro
-
-hiro@btcjp.co
