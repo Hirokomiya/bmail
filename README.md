@@ -22,6 +22,8 @@ TX Hash
 Send me a message to
 0x6CD1B82490Eb7aA18beC4305C6c2E691194C6898
 
-Thank you!
+It now costs about 10 cents to send a short message and it was 40 cents before the hardfork at height 7,280,000. And I know it is not free!
+
+Thank you
 
 Hiro
