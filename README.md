@@ -1,12 +1,12 @@
 # bmail
 How to use
 
-copy and paste the code on remix or Ethereum Wallet (or anything you can deploy), make sure connected to metamask mainnet
-and click "At Address" with this contract address 0xdd583e1577e202720ab84172aac04e1d1768c57f
+Copy and paste the code on remix or Ethereum Wallet (or anything you can deploy), make sure your you are connected to metamask mainnet.
+Click "At Address" with this contract address 0xdd583e1577e202720ab84172aac04e1d1768c57f
 
-"click bmail" insert eth address in "to" box and message in "message" box to send
+Click "bmail" insert eth address in "to" box and message in "message" box to send
 
-check index_inbox to see if you have any message. It shows you numbers. Shows nothing if no message
+Check Index_inbox to see if you have any message. It shows you numbers. Shows nothing if no message
 
 If you have any message and you will see the number. 
 Go to inbox and type the number to open the message
