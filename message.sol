@@ -5,7 +5,6 @@ contract MessageApp {
     struct Message {
         string inbox;
         address receiver;
-        address sender;
     }
     
     Message[] messages;
@@ -17,7 +16,7 @@ contract MessageApp {
     mapping (address => uint) receiveCount;
     
     function bmail(string message, address to) public {
-        uint id = messages.push(Message(message, to, msg.sender))- 1;
+        uint id = messages.push(Message(message, to))- 1;
         messageSender[id] = msg.sender;
         messageCount[msg.sender]++;
         messageContent[id] = message;
