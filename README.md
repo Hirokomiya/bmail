@@ -1,7 +1,7 @@
 # bmail
 How to use
 
-Copy and paste the code on remix or Ethereum Wallet (or anything you can deploy), make sure your you are connected to metamask mainnet.
+Copy and paste the code on remix or Ethereum Wallet (or anything you can deploy), make sure to connect to metamask mainnet.
 Click "At Address" with this contract address 0xdd583e1577e202720ab84172aac04e1d1768c57f
 
 Click "bmail" insert eth address in "to" box and message in "message" box to send
