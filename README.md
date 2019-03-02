@@ -22,6 +22,8 @@ TX Hash
 Send me a message to
 0x6CD1B82490Eb7aA18beC4305C6c2E691194C6898
 
+You can set gwei to 2 for cheaper transaction and still works. It is 3 as default. 
+
 Thank you
 
 Hiro
